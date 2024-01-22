@@ -1,0 +1,307 @@
+@font-face {
+    font-family: "creato";
+    src: url("./assets/fonts/CreatoDisplay-Regular.otf") format("otf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "radwave";
+    src: url("./assets/fonts/radwave.otf") format("otf");
+}
+
+@font-face {
+    font-family: "tungsten";
+    src: url("./assets/fonts/Tungsten-Black.otf") format("otf");
+}
+
+:root {
+    --text-shadow:
+        1px 1px 0 #151515,
+        2px 2px 1px #090909;
+    --clr-dark: #0c0c0c;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(144deg, #050132, #0c0514);
+    background-size: 200% 200%;
+
+    -webkit-animation: backgroundAnimation 5s ease infinite;
+    -moz-animation: backgroundAnimation 5s ease infinite;
+    animation: backgroundAnimation 5s ease infinite;
+
+    height: 100dvh;
+    overflow: hidden;
+}
+
+@-webkit-keyframes backgroundAnimation {
+    0% {
+        background-position: 4% 0%
+    }
+
+    50% {
+        background-position: 97% 100%
+    }
+
+    100% {
+        background-position: 4% 0%
+    }
+}
+
+@-moz-keyframes backgroundAnimation {
+    0% {
+        background-position: 4% 0%
+    }
+
+    50% {
+        background-position: 97% 100%
+    }
+
+    100% {
+        background-position: 4% 0%
+    }
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 4% 0%
+    }
+
+    50% {
+        background-position: 97% 100%
+    }
+
+    100% {
+        background-position: 4% 0%
+    }
+}
+
+/* PRUEBAS TIPOGRÁFICAS -------------------------
+h1,
+h2,
+h3 {
+    font-family: "radwave";
+    font-size: 6rem;
+    line-height: 5rem;
+}
+
+h4,
+h5,
+h6 {
+    font-family: "tungsten", Impact, sans-serif;
+    font-weight: 800;
+    font-size: 4rem;
+    line-height: 3.4rem;
+}
+
+p,
+span {
+    font-family: "creato", Helvetica, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+} */
+
+/* ----------------------------------------------------------------
+A PARTIR DE ESTE PUNTO VAN LOS ESTILOS PARA LAS TRES SECCIONES */
+.wrapper {
+
+    /* Como tengo 5 secciones principales, la width serán 400% */
+    width: 500%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+
+.logo {
+    font-family: "radwave", Impact;
+    position: fixed;
+    z-index: 10;
+    top: 30%;
+    left: 4rem;
+
+    font-size: 7.4rem;
+    line-height: 6.8rem;
+    letter-spacing: 0.02rem;
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+
+.logo_fajardo {
+    height: 30px;
+    position: absolute;
+    z-index: 25;
+    bottom: 4rem;
+    right: 4rem;
+
+}
+
+.logo span:hover {
+    color: white;
+    cursor: pointer;
+}
+
+
+.line {
+    background-color: rgb(151, 0, 0);
+    height: 20px;
+    width: 100%;
+    top: 40%;
+    position: absolute;
+    transform: translateY(-50%);
+
+    box-shadow:
+        0 80px rgb(80, 0, 0),
+        0 160px rgb(40, 40, 40),
+        0 240px rgb(0, 0, 0);
+}
+
+/* Vamos a crear los estilos para cada sección con cada personaje */
+section {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+
+/* Recuerda que para poder utilizar ::before y ::after necesitas especificar el atributo content */
+section.character::before {
+    content: '';
+    width: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.block {
+    width: 50%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+
+    transform: translateX(-100%);
+}
+
+.king_boo::before,
+.king_boo .block {
+    background-color: rgb(43, 9, 78);
+}
+
+.petey_piranha::before,
+.petey_piranha .block {
+    background-color: rgb(185, 30, 3);
+}
+
+.kamek::before,
+.kamek .block {
+    background-color: rgb(9, 14, 88);
+}
+
+.bowser::before,
+.bowser .block {
+    background-color: rgb(49, 0, 4);
+}
+
+.caption {
+    bottom: 4rem;
+    left: 4rem;
+    position: absolute;
+    z-index: 15;
+    width: 30%;
+
+    font-family: "creato", Helvetica, sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.6rem;
+    font-weight: 300;
+    color: #f6f6f6;
+    text-shadow: var(--text-shadow);
+
+    transform: translate(100%, 100%);
+}
+
+.character img {
+    position: relative;
+    z-index: 10;
+    height: 18dvh;
+    width: auto;
+
+    transform: translateY(-300%);
+    transition: height 1.5s ease-out, width 3s ease-out;
+}
+
+img:hover {
+    cursor: pointer;
+    height: 82dvh;
+    width: auto;
+}
+
+.huge_text {
+    font-family: "radwave";
+    font-size: 4rem;
+    line-height: 12rem;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    left: 0;
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: 2px black;
+
+    transform: translateY(400%)
+}
+
+.huge_text:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.slogan {
+    font-family: "tungsten";
+    font-weight: 900;
+
+    position: absolute;
+    top: 10rem;
+    right: 6rem;
+    font-size: 2.4rem;
+    text-align: right;
+    color: #d8d8d8;
+    text-shadow: var(--text-shadow);
+
+    transform: translateY(-200%)
+}
+
+.quote {
+    color: #d8d8d8;
+    text-shadow: var(--text-shadow);
+    font-family: "tungsten";
+    font-weight: 900;
+    position: absolute;
+    bottom: 4rem;
+    right: 6rem;
+    font-size: 3rem;
+    width: 30%;
+    text-align: right;
+
+    transform: translateY(200%)
+}
+
+.quote::before,
+.quote::after {
+    content: "";
+    color: #d8d8d8;
+}
