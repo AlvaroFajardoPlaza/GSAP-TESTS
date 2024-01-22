@@ -15,8 +15,21 @@ body {
     font-family: "syne", Helvetica, sans-serif;
 }
 
+
+/* Generamos nuestra variable [data-hidden], para ocultar todos aquellos elemts que no queremos que se muestren en primera instancia! */
+[data-hidden] {
+    opacity: 0;
+}
+
+.white_spacer {
+    min-height: 40dvh;
+}
+
+
+/* ---------------------------------------- HERO SECTION ---------------------------------------- */
+
 .hero {
-    border: 5px solid red;
+    /* border: 5px solid red; */
 
     display: flex;
     justify-content: center;
@@ -26,12 +39,15 @@ body {
 }
 
 .hero_title {
-    font-size: 4rem;
+    font-size: 8rem;
     position: absolute;
     z-index: 10;
 
     transform: translateY(0%);
+    /* background: rgba(255, 255, 255, 0.2); */
 }
+
+
 
 .hero_images {
     width: 100%;
@@ -43,23 +59,23 @@ body {
 
 .image_01 {
     position: absolute;
-    height: 40rem;
+    height: 60%;
     z-index: 0;
     top: 0;
     left: 0;
 }
 
 .image_02 {
-    height: 32rem;
+    height: 50%;
 
     position: absolute;
     z-index: -1;
-    top: 28%;
-    left: 20%;
+    top: 32%;
+    left: 22%;
 }
 
 .image_03 {
-    height: 24rem;
+    height: 46%;
     position: absolute;
     z-index: 0;
 
@@ -69,18 +85,27 @@ body {
 
 .image_04 {
     position: absolute;
-    height: 32rem;
+    height: 48%;
     z-index: -1;
 
-    top: 10%;
-    right: 10%;
+    top: -5%;
+    right: 12%;
+}
+
+.image_05 {
+    position: absolute;
+    height: 50%;
+    z-index: -1;
+
+    bottom: 5%;
+    right: 40%;
 }
 
 .logo_primary_black {
     position: absolute;
     z-index: 99;
 
-    height: 10rem;
+    height: 6rem;
     bottom: 2rem;
     left: 2rem;
 }
@@ -89,11 +114,10 @@ body {
 /* ----------- CSS PARA LA SECCIÓN BLOQUE DE TEXTO ------------------------------- */
 .section {
     min-height: 100dvh;
-    border: 5px solid orange;
+    /* border: 5px solid orange; */
 
     font-size: 2.2rem;
-    line-height: 3.2rem;
-    color: #707070;
+    line-height: 1.8rem;
 
     display: flex;
     align-items: center;
@@ -102,7 +126,7 @@ body {
 .container {
     width: 100%;
     height: fit-content;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 
     display: flex;
     flex-direction: column;
@@ -112,8 +136,16 @@ body {
 }
 
 .text_effect {
-    border: 1px solid magenta;
+    /* border: 1px solid magenta; */
     margin-left: 2rem;
+}
+
+.text_overlay {
+    background: rgba(255, 0, 0, 0.299);
+}
+
+.text_effect p {
+    color: #0e0e0e;
 }
 
 
@@ -122,8 +154,8 @@ body {
     position: relative;
     overflow: hidden;
 
-    height: 100dvh;
-    border: 5px solid rebeccapurple;
+    min-height: 120dvh;
+    /* border: 5px solid rebeccapurple; */
 
     display: flex;
     justify-content: center;
@@ -153,7 +185,7 @@ body {
 .full_image_text p {
     font-size: 1.4rem;
     line-height: 2.4rem;
-    color: #ececec;
+    color: #f7f7f7;
 }
 
 .full_image_text button {
@@ -189,6 +221,8 @@ body {
 /* ----------- CSS PARA LA SECCIÓN DE JOIN THE MOVEMENT ------------------------------- */
 .join_the_movement {
     height: 100dvh;
+    width: 100%;
+    overflow: hidden;
 
     display: flex;
     justify-content: center;
@@ -196,11 +230,19 @@ body {
 
     color: white;
     background-color: rgb(20, 20, 20);
+    /* border: 5px solid lime; */
 }
 
 .join_us_text {
+    position: relative;
+    z-index: 1;
     font-size: 2.4rem;
     width: 50%;
+
+    transform: translateX(100%);
+
+    margin-top: 4rem;
+    margin-bottom: 4rem;
 }
 
 .join_us_text strong {

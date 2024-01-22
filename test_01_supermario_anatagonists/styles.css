@@ -244,6 +244,20 @@ section.character::before {
     transition: height 1.5s ease-out, width 3s ease-out;
 }
 
+/* .character img::before {
+    content: "";
+    inset: 8px;
+    position: absolute;
+    filter: brightness(0)
+}
+
+.character img::after {
+    content: "";
+    inset: 8px;
+    position: absolute;
+    filter: brightness(0)
+} */
+
 img:hover {
     cursor: pointer;
     height: 82dvh;
