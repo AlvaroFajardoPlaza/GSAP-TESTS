@@ -1,0 +1,441 @@
+@font-face {
+    font-family: "inter";
+    src: url("./assets/Inter-VariableFont.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: "radwave";
+    src: url("./assets/Radwave.otf") format("otf");
+}
+
+:root {
+    --primary-color: rgb(250, 250, 250);
+    --secondary-color: rgb(0, 0, 0);
+    --cubic-bezier: cubic-bezier(.27, .13, .77, 1.01);
+    --fz-big: 60px;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* font-family: "inter", Helvetica, sans-serif; */
+    color: var(--primary-color)
+}
+
+body {
+    background: var(--secondary-color);
+    font-family: "inter";
+    font-weight: 600;
+}
+
+
+section {
+    padding-top: 150px;
+    padding-bottom: 80px;
+}
+
+.wrapper {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Header section ----------------------------------------------  */
+.header {
+    position: relative;
+    width: 100%;
+
+
+    padding: 0 70px;
+    overflow: hidden;
+}
+
+.header_hero {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_hero .title {
+    font-family: "radwave", "inter";
+    font-weight: 900;
+    position: relative;
+    z-index: 10;
+
+    width: 40%;
+    font-size: 5.2rem;
+
+    mix-blend-mode: difference;
+}
+
+.header_hero .title .stroke {
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: 0.1px var(--primary-color);
+}
+
+
+.header_img {
+    position: relative;
+    z-index: -2;
+}
+
+.header_img img {
+    width: 750px;
+}
+
+.white_box {
+    border: 1px solid var(--primary-color);
+    width: 80%;
+    height: 64%;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    box-shadow:
+        10px 10px var(--primary-color);
+    /* -10px -10px var(--primary-color); */
+}
+
+.scroll_container {
+    position: relative;
+    z-index: 1;
+}
+
+.scroll_content {
+    overflow: hidden;
+    padding: 1rem 0;
+    white-space: nowrap;
+
+    -webkit-mask: linear-gradient(90deg, transparent, #FFF, #FFF, transparent);
+    mask: linear-gradient(90deg, transparent, #FFF, #FFF, transparent);
+}
+
+.scroll_content_text {
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: transparent;
+
+    -webkit-text-stroke: 1px var(--primary-color);
+    /* text-stroke: 1px var(--primary-color); */
+}
+
+.scroll_content_text:hover {
+    color: rgb(255, 255, 255);
+}
+
+.scroll_content_img img {
+    width: 3.5rem;
+}
+
+
+
+/* Recuerda que el estilo .section_title lo tienes aplicados a otras secciones! */
+.section_title {
+    position: relative;
+    margin: 0;
+    margin-bottom: 60px;
+    line-height: .8;
+    padding: 2rem 0rem;
+
+    font-family: "radwave";
+    font-size: 4.4rem;
+    text-align: center;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.section_title:hover {
+    cursor: pointer;
+}
+
+.section_title .stroke {
+    color: transparent;
+    -webkit-text-stroke: .2px var(--primary-color);
+
+    mix-blend-mode: difference;
+}
+
+.section_title .stroke:hover {
+    cursor: pointer;
+    color: var(--primary-color);
+    mix-blend-mode: difference;
+}
+
+.section_title_square {
+    position: absolute;
+    display: inline-block;
+    color: transparent;
+    border: 1px solid var(--primary-color);
+    width: 6rem;
+    height: 6rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+    mix-blend-mode: difference;
+}
+
+/* .section_title_square::before {
+    content: "";
+    position: absolute;
+    color: transparent;
+    border: 1px solid rgb(20, 20, 20);
+    width: 4rem;
+    height: 4rem;
+    transform: rotate(45deg);
+    z-index: -2;
+
+    mix-blend-mode: difference;
+} */
+
+/* Estilos para la sección ABOUT ME -------------------------------- */
+.about .section_title {
+    text-align: left;
+}
+
+.about_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_img_container,
+.about_text {
+    width: calc(50% - 35px);
+    height: auto;
+}
+
+.about_img_container {
+    height: 100dvh;
+    overflow: hidden;
+}
+
+.about_img_container img {
+    height: 100%;
+    width: 900px;
+    position: relative;
+    z-index: -1;
+
+    object-fit: cover;
+}
+
+.about_text {
+    padding-right: 20px;
+}
+
+.about_me_p {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 300;
+    line-height: 2rem;
+}
+
+
+/* Estilos para la sección BENEFITS -------------------------------- */
+.grid_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.benefits_list {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr*4;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "benefit_1 benefit_2 benefit_3 benefit_4";
+    gap: 2rem;
+}
+
+.benefits_item {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 300;
+    line-height: 2rem;
+
+    padding: 2.4rem;
+    border: .2px solid var(--primary-color);
+    box-shadow:
+        10px 10px var(--primary-color);
+}
+
+.benefits_item span {
+    color: transparent;
+    mix-blend-mode: difference;
+    -webkit-text-stroke: .04px var(--primary-color);
+
+    font-size: 4.4rem;
+    font-family: "radwave";
+    font-weight: 900;
+}
+
+.benefits_item span:hover {
+    cursor: pointer;
+    color: var(--primary-color)
+}
+
+.benefits_item_p {
+    margin-top: 1.4rem;
+}
+
+.benefit_1 {
+    grid-area: benefit_1;
+}
+
+.benefit_2 {
+    grid-area: benefit_2;
+}
+
+.benefit_3 {
+    grid-area: benefit_3;
+}
+
+.benefit_4 {
+    grid-area: benefit_4;
+}
+
+/* Estilos para la sección WORK Y PORTFOLIO -------------------------------- */
+/* .work_wrap_container {
+    width: 88%;
+} */
+
+.work_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    padding: 0 10px;
+}
+
+.work_item {
+    position: relative;
+    /* box-shadow:
+        10px 10px var(--primary-color); */
+}
+
+.work_item::after {
+    content: "";
+    position: absolute;
+    inset: -14px;
+    /* box-shadow: 10px 10px #FFF; */
+    border: 1px solid #FFF;
+}
+
+.work_item_num {
+    position: absolute;
+    display: inline-block;
+    z-index: 2;
+
+    color: transparent;
+    mix-blend-mode: difference;
+    -webkit-text-stroke: .04px var(--primary-color);
+
+    font-size: 4.4rem;
+    font-family: "radwave";
+    font-weight: 900;
+}
+
+.work_item_img {
+    width: 380px;
+    height: 620px;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.work_item_img img {
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+
+
+/* Estilos para la sección FOOTER -------------------------------- */
+.footer {
+    width: 100%;
+    height: 50dvh;
+}
+
+.footer_cont {
+
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    line-height: 4rem;
+}
+
+.span_container {
+    font-family: "radwave";
+    font-size: 2rem;
+
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.footer_link {
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.logo_container {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+}
+
+.logo_container img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES SECTION ---------------------- */
+@media only screen and (min-width: 481px) and (max-width: 1100px) {
+    .benefits_list {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "benefit_1 benefit_2"
+            "benefit_3 benefit_4"
+        ;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .benefits_list {
+        width: 88%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "benefit_1"
+            "benefit_2"
+            "benefit_3"
+            "benefit_4"
+        ;
+    }
+}
