@@ -113,7 +113,7 @@ A PARTIR DE ESTE PUNTO VAN LOS ESTILOS PARA LAS TRES SECCIONES */
 .wrapper {
 
     /* Como tengo 5 secciones principales, la width serán 400% */
-    width: 500%;
+    width: 600%;
     height: 100%;
     display: flex;
     flex-wrap: nowrap;
@@ -210,6 +210,11 @@ section.character::before {
 .kamek::before,
 .kamek .block {
     background-color: rgb(9, 14, 88);
+}
+
+.junior::before,
+.junior .block {
+    background-color: rgb(104, 1, 93);
 }
 
 .bowser::before,

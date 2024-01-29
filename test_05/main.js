@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 start: "top bottom",
                 scrub: 1.4,
             },
-            yPercent: 80, 
+            yPercent: 20, 
         })
         gsap.from(".about_img_container img", {
             scrollTrigger: {
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 trigger: ".about",
                 start: "top bottom", 
                 scrub: 1.8
-            }, yPercent: 40
+            }, yPercent: 0
         })
         // gsap.to(".about_text .about_me_p", {
         //     scrollTrigger: {
@@ -168,6 +168,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // ANIMACIÓN PARA LA PARTE DE PROJECTS
     function projects() {
+        gsap.from(".work_item", {
+            scrollTrigger: {
+                trigger: ".work_wrap_container",
+                scrub: 1.2,
+                start: "top bottom",
+                end: "bottom bottom"
+            }, x: 1000
+        })
         gsap.from(".work_item, .work_item_num", {
             y: (i, el) => (1 - parseFloat(el.getAttribute('data-speed'))),
             scrollTrigger: {
