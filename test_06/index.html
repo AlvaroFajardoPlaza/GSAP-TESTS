@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP | TEST 06</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css"/>
+</head>
+<body>
+    <!-- Para esta prueba quiero que entre y salga texto de manera dinámica -->
+    <header class="hero">
+        <h1 class="hero_title">
+            <div data-hidden>
+                <span>W</span>
+                <span>e</span>
+                <span>l</span>
+                <span>c</span>
+                <span>o</span>
+                <span>m</span>
+                <span>e</span>
+            </div>
+        </h1>
+        <hr></hr>
+    </header>
+    
+    <main>
+
+        <!-- Necesitamos un spacer para poder actuar bien sobre el scroll -->
+        <div class="spacer"></div>
+
+        <section class="section__01">
+            <!-- ScrollTrigger sobre un círculo y texto que aparece dentro del mismo -->
+            <div class="my_circle_red">
+            </div>
+        </section>
+
+        <div class="spacer"></div>
+
+    </main>
+
+
+    <!-- JS SCRIPTS  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script> 
+
+    <script src="./main.js"></script>
+
+</body>
+</html>
